@@ -1,3 +1,6 @@
 [submodule "part0"]
 	path = part0
 	url = git@github.com:degenone/FSO-part0
+[submodule "part1"]
+	path = part1
+	url = git@github.com:degenone/FSO-part1
