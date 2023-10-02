@@ -1,0 +1,9 @@
+{
+    "filepath": "/c/Program Files/nodejs/prettier",
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSameLine": true,
+    "tabWidth": 4,
+    "trailingComma": "es5"
+}
