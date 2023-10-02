@@ -7,7 +7,7 @@ param (
 
 $prettier = Get-Command prettier -ErrorAction SilentlyContinue -ErrorVariable err
 if ($prettier) {
-    $glob = "$Path/*.{ts,tsx,css,md,html}"
+    $glob = "$Path/*.{ts,tsx,js,jsx,css,md,html}"
     $mode = if ($Check) { "--check" } else { "--write" }
     & $prettier $glob $mode
 } else {
