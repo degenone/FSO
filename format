@@ -1,0 +1,34 @@
+#!/bin/sh
+
+check=false
+
+while test $# != 0
+do
+    case "$1" in
+    -c|--check) check=true ;;
+    -p|--path)
+        path="$2"; shift ;;
+    *)  usage ;;
+    esac
+    shift
+done
+
+suffixes="*.{ts,tsx,js,jsx,css,html}"
+prettier=$(which prettier)
+if [ -n "$prettier" ]; then
+    if [ -z "$path" ]; then
+        glob="**/$suffixes"
+    else
+        if [ "${path:-1}" = "/" ]; then
+            path="${path::-1}"
+        fi
+        glob="$path**/$suffixes"
+    fi
+    mode="--write"
+    if [ "$check" = true ]; then
+        mode="--check"
+    fi
+    prettier $mode $glob --config .prettierrc --stdin-filepath $prettier
+else
+    echo "Error: prettier not found"
+fi
