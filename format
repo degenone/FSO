@@ -1,6 +1,7 @@
 #!/bin/sh
 
 check=false
+path=""
 
 while test $# != 0
 do
