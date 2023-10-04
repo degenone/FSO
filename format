@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 check=false
 path=""
@@ -20,7 +20,7 @@ if [ -n "$(which prettier)" ]; then
     if [ -z "$path" ]; then
         glob="**/$suffixes"
     else
-        if [ "${path:0-1}" = "/" ]; then
+        if [ "${path: -1}" = "/" ]; then
             path="${path::-1}"
         fi
         glob="$path/**/$suffixes"
