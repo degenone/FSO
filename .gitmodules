@@ -25,3 +25,6 @@
 [submodule "part8"]
 	path = part8
 	url = git@github.com:degenone/FSO-part8
+[submodule "part9"]
+	path = part9
+	url = git@github.com:degenone/FSO-part9
